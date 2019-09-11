@@ -21,6 +21,9 @@ $('#submitSearch').on('click', () => {
   event.preventDefault();
 
   var topic = $('#topicInput').val().trim();
+  if (topic ==="") {
+    return;
+  }
   topicsArray.push(topic);
   $('#topicInput').val(""); // clears search field
 
@@ -44,6 +47,12 @@ function giphySearch() {
       $('#imageBlock').empty();
 
       var results = response.data;
+      if (results.length === 0) {
+        alert('Giphy came back with nothing! Try entering something else.')
+        topicsArray.pop();
+        renderButtons();
+        return;
+      }
       for (let i = 0; i < results.length; i++) {
         var $div = $('<div>');
         var $p = $('<p>').text(`rating: ${results[i].rating}`);
