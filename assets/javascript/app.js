@@ -1,5 +1,5 @@
 
-var topicsArray = [];
+var topicsArray = ["cat","dog","cow","bird","dragon","donkey","ogre"];
 
 // var searchTopic
 // var url = `api.giphy.com/v1/gifs/search?q=${searchTopic}&api_key=kX5XuEOPC5s1PDPbdpm8egVNF3RZJNlA&limit=1`;
@@ -15,7 +15,7 @@ function renderButtons() {
     $button.text(topicsArray[i]);
     $('#buttonView').append($button)
   }
-}
+} renderButtons();
 
 $('#submitSearch').on('click', () => {
   event.preventDefault();
