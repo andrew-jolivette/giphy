@@ -46,14 +46,14 @@ function giphySearch() {
       var results = response.data;
       for (let i = 0; i < results.length; i++) {
         var $div = $('<div>');
-        $div.addClass('col-4')
         var $p = $('<p>').text(`rating: ${results[i].rating}`);
         var $img = $('<img>');
         $img.attr('src', results[i].images.fixed_height_still.url);
         $img.attr('image-still', results[i].images.fixed_height_still.url);
         $img.attr('image-animate', results[i].images.fixed_height.url);
         $img.attr('image-state', 'still');
-        $img.addClass('img-giphy')
+        $img.addClass('img-giphy mr-1 ml-1')
+
         $div.prepend($p);
         $div.prepend($img);
 
