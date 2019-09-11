@@ -46,10 +46,12 @@ function giphySearch() {
       console.log(response)
       $('#imageBlock').empty();
 
+      var topicIndex = topicsArray.indexOf(searchTopic)
+      
       var results = response.data;
       if (results.length === 0) {
         alert('Giphy came back with nothing! Try entering something else.')
-        topicsArray.pop();
+        topicsArray.splice(topicIndex, 1);
         renderButtons();
         return;
       }
