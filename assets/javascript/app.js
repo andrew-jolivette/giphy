@@ -24,6 +24,12 @@ $('#submitSearch').on('click', () => {
   if (topic ==="") {
     return;
   }
+  for (let i = 0; i < topicsArray.length; i++){
+    if (topic === topicsArray[i]){
+      $('#topicInput').val('');
+      return;
+    }
+  }
   topicsArray.push(topic);
   $('#topicInput').val(""); // clears search field
 
